@@ -20,7 +20,7 @@ module.exports = function(req, res) {
     // async reqeust to database - returns promise
 
     admin.auth().createUser({ uid: phone })
-    .then((user) => res.status(400).send(user))
+    .then((user) => res.send(user))
     .catch((error) => res.status(422).send({ error: error }));
 
     // Respond to the user request, saying the account was made

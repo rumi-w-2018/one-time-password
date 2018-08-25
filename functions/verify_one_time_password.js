@@ -31,7 +31,7 @@ module.exports = function(req, res){
            // Generate JWT (Json Web Token)
            // createCustomToken requires id
            admin.auth().createCustomToken(phone)
-           .then( token => res.status(400).send({ token: token}))
+           .then( token => res.send({ token: token}))
         });
     })
     .catch( error => res.status(422).send({ error: error }))

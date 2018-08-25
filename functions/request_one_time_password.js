@@ -28,7 +28,7 @@ module.exports = function(req, res){
             // 2. In the collection create a new entry, phone
             admin.database().ref('users/' + phone)
             .update({ code: code, codeValid: true }, () => {
-                res.status(400).send({ success:true });
+                res.send({ success:true });
             })
         })
     })
